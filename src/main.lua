@@ -28,7 +28,6 @@ end
 
 WindUI:SetTheme(WindUiSettings.SelectedTheme)
 
-
 local Fractxlware_M = {}
 local Elements = {}
 
@@ -49,8 +48,13 @@ function Fractxlware_M.ConstructMain(License)
         },
         SideBarWidth = 200,
         ScrollBarEnabled = true,
+        Anonymous = true,
     })
+
+    Elements.SettingsTab = MainWindow:Tab({
+        
+    })
+
 end
 
 return Fractxlware_M
-
