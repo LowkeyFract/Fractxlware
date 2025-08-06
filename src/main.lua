@@ -137,7 +137,7 @@ local function LicenseWindow_F()
     Elements.LicenseInput = Elements.License:Input({
         Title = "License",
         Desc = "Input your license to gain access to Fractxlware",
-        InputIcon = "",
+        InputIcon = "key-square",
         Type = "Input",
         Placeholder = "Enter License",
         Value = (isfile and isfile("Fractxlware/license.key") and readfile("Fractxlware/license.key")) or "",
