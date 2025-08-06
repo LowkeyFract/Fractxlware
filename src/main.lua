@@ -4,8 +4,21 @@ local version = "1.0";
 
 local HttpService = game:GetService("HttpService")
 
-local KeyAPI = ("./src/modules/KeyAPI")
-local LoadingScreen = ("./src/modules/LoadingScreen")
+local function loadFileFromGitHub(path)
+    local url = ("https://raw.githubusercontent.com/LowkeyFract/Fractxlware/main/src/%s.lua"):format(path)
+    local success, result = pcall(function()
+        return loadstring(game:HttpGet(url))()
+    end)
+    if success then
+        return result
+    else
+        warn("Failed to load module:", path, result)
+        return nil
+    end
+end
+
+local KeyAPI = loadFileFromGitHub("modules/KeyAPI")
+local LoadingScreen = loadFileFromGitHub("modules/LoadingScreen")
 
 local Initialized = false
 local sessionid = ""
@@ -125,7 +138,7 @@ local function LicenseWindow_F()
                     Content = licensedata.message .. " Creating Window.."
                 })
             LicenseWindow:Close():Destroy()
-            (LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
+            writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
             end
         end
     })
