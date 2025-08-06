@@ -47,7 +47,6 @@ end
 LoadingScreen:ShowAsync()
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
-
 local WindUiSettings = {
     SelectedTheme = "Dark",
     Themes = Themes
@@ -119,7 +118,7 @@ local function LicenseWindow_F()
                 })
             LicenseWindow:Close():Destroy()
             writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
-                task.wait(3):Fractxlware_M:ConstructMain()
+            task.delay(5, Fractxlware_M.ConstructMain())
             end
         end
     })

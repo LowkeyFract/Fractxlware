@@ -1,0 +1,7 @@
+{
+    "robloxLsp.diagnostics.globals": [
+        "isfile",
+        "readfile",
+        "writefile"
+    ]
+}
