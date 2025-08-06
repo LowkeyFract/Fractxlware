@@ -163,7 +163,7 @@ local function LicenseWindow_F()
                     Icon = "info",
                     Content = licensedata.message .. " Loading hub.."
                 })
-            LicenseWindow:Close():Destroy(MainWindow_F)
+            LicenseWindow:Close():Destroy(MainWindow_F())
             writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
             end
         end
