@@ -103,11 +103,6 @@ local function LicenseWindow_F()
         ScrollBarEnabled = true,
     })
 
-        Elements.LicenseWindow:DisableTopbarButtons({
-            "Minimize",
-            "Fullscreen",
-        })
-
     Elements.License = LicenseWindow:Tab({
         Title = "License",
         Icon = "key-round",
