@@ -115,7 +115,7 @@ local function LicenseWindow_F()
         InputIcon = "",
         Type = "Input",
         Placeholder = "Enter License",
-        Value = "hi",
+        Value = (isfile and isfile("Fractxlware/license.key") and readfile("Fractxlware/license.key")) or "",
         SaveKey = true,
         Callback = function(input)
             License = input
