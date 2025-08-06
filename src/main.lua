@@ -115,6 +115,7 @@ local function LicenseWindow_F()
         InputIcon = "",
         Type = "Input",
         Placeholder = "Enter License",
+        Value = "hi",
         SaveKey = true,
         Callback = function(input)
             License = input
