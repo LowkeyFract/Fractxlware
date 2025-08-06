@@ -82,6 +82,31 @@ WindUI:SetTheme(WindUiSettings.SelectedTheme)
 
 local Elements = {}
 
+local function MainWindow_F()
+    local MainWindow = WindUI:CreateWindow({
+        Title = "Fractxlware",
+        Icon = "rbxassetid://129260712070622",
+        IconThemed = true,
+        Author = "Made by LowkeyFract",
+        Folder = "Fractxlware",
+        Size = UDim2.fromOffset(580, 460),
+        Transparent = true,
+        Theme = WindUiSettings.SelectedTheme,
+        User = {
+            Enabled = true,
+            Callback = function() print("clicked") end,
+            Anonymous = false
+        },
+        SideBarWidth = 200,
+        ScrollBarEnabled = true,
+    })
+
+    MainWindow:DisableTopbarButtons({
+        "Minimize",
+        "Fullscreen",
+    })
+end
+
 local function LicenseWindow_F()
     local License = ""
 
@@ -140,9 +165,12 @@ local function LicenseWindow_F()
                 })
             LicenseWindow:Close():Destroy()
             writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
+            MainWindow_F()
             end
         end
     })
 end
 
 if Initialized == true then LicenseWindow_F() end
+
+
