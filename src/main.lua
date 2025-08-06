@@ -41,6 +41,8 @@ else
     return false
 end
 
+KeyAPI.FetchStats(name, ownerid, sessionid)
+
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local WindUiSettings = {
     SelectedTheme = "Dark",
@@ -50,8 +52,6 @@ local WindUiSettings = {
 for _, themeData in pairs(WindUiSettings.Themes) do
     WindUI:AddTheme(themeData)
 end
-
-WindUI:SetTheme(WindUiSettings.SelectedTheme)
 
 local Fractxlware_M = {}
 local Elements = {}
@@ -76,15 +76,33 @@ function Fractxlware_M.ConstructMain(License)
         Anonymous = true,
     })
 
+
     Elements.StatsTab = MainWindow:Tab({
         Title = "Stats",
         Icon = "server",
     })
 
+    Elements.StatssActiveUsers = Elements.StatsTab:Paragraph({
+        Title = "Active Users: "..  data.appinfo.numOnlineUsers
+    })
+
+
     Elements.SettingsTab = MainWindow:Tab({
         Title = "Settings",
         Icon = "settings",
     })
+
+    Elements.ThemeSelection = Elements.SettingsTab:Dropdown({
+        Title = "Select Theme",
+        Values = (function() local t = {}; for k, _ in pairs(WindUiSettings.Themes) do table.insert(t, k) end; return t end)(),
+        Value = WindUiSettings.SelectedTheme,
+        Callback = function(option)
+            WindUiSettings.SelectedTheme = option
+            WindUI:SetTheme(option)
+        end
+    })
 end
+
+ -- Fractxlware_M.ConstructMain()
 
 return Fractxlware_M

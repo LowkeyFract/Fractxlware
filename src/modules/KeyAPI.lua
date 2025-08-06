@@ -56,4 +56,31 @@ function KeyAPI.LicenseCheck(name, ownerid, version, sessionid, license)
     return licensedata
 end
 
+function KeyAPI.FetchStats(name, ownerid, sessionid)
+    local url = string.format(
+        "https://keyauth.win/api/1.3/?type=fetchStats&name=%s&ownerid=%s&sessionid=%s",
+        name, ownerid, sessionid
+    )
+
+    local success, response = pcall(function()
+        return game:HttpGet(url)
+    end)
+
+    if not success then
+        warn("[KeyAuthError]: Stats request failed -", response)
+        return nil
+    end
+
+    local ok, statsdata = pcall(function()
+        return HttpService:JSONDecode(response)
+    end)
+
+    if not ok then
+        warn("[KeyAuthError]: Failed to decode stats JSON -", statsdata)
+        return nil
+    end
+
+    return statsdata
+end
+
 return KeyAPI
