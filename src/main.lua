@@ -77,11 +77,13 @@ function Fractxlware_M.ConstructMain(License)
     })
 
     Elements.StatsTab = MainWindow:Tab({
-        
+        Title = "Stats",
+        Icon = "server",
     })
 
     Elements.SettingsTab = MainWindow:Tab({
-        
+        Title = "Settings",
+        Icon = "settings",
     })
 end
 
