@@ -119,7 +119,7 @@ local function LicenseWindow_F()
                 })
             LicenseWindow:Close():Destroy()
             writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
-                task.wait(3):Fractxlware_M.ConstructMain()
+                task.wait(3):Fractxlware_M:ConstructMain()
             end
         end
     })

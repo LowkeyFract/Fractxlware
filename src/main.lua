@@ -17,7 +17,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 
 local Fractxlware_M = {}
 
-function Fractxlware_M.ConstructMain()
+function Fractxlware_M:ConstructMain()
     local MainWindow = WindUI:CreateWindow({
         Title = "Fractxlware",
         Icon = "rbxassetid://129260712070622",
