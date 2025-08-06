@@ -20,7 +20,7 @@ end
 local Themes = loadFileFromGitHub("src/config/themes")
 local KeyAPI = loadFileFromGitHub("src/cmodules/KeyAPI")
 local LoadingScreen = loadFileFromGitHub("src/modules/LoadingScreen")
-local main = loadFileFromGitHub("src/main")
+local Fractxlware_M = loadFileFromGitHub("src/main")
 
 local Initialized = false
 local sessionid = ""
@@ -117,9 +117,9 @@ local function LicenseWindow_F()
                     Icon = "info",
                     Content = licensedata.message .. " Loading hub.."
                 })
-            LicenseWindow:Close():Destroy
+            LicenseWindow:Close():Destroy()
             writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
-                task.wait(3):main.ConstructMain()
+                task.wait(3):Fractxlware_M.ConstructMain()
             end
         end
     })

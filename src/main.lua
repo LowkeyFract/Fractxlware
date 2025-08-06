@@ -15,9 +15,9 @@ end
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
-local Fractxlware = {}
+local Fractxlware_M = {}
 
-function ConstructMain()
+function Fractxlware_M.ConstructMain()
     local MainWindow = WindUI:CreateWindow({
         Title = "Fractxlware",
         Icon = "rbxassetid://129260712070622",
@@ -37,5 +37,5 @@ function ConstructMain()
     })
 end
 
-return Fractxlware = {}
+return Fractxlware_M = {}
 
