@@ -89,7 +89,7 @@ local function LicenseWindow_F()
         Title = "Fractxlware Public",
         Icon = "rbxassetid://129260712070622",
         IconThemed = true,
-        Author = "v0.006",
+        Author = "v0.007",
         Folder = "Fractxlware",
         Size = UDim2.fromOffset(580, 460),
         Transparent = true,
