@@ -14,6 +14,7 @@ local function loadFileFromGitHub(path)
 end
 
 local Themes = loadFileFromGitHub("src/config/themes")
+local KeyAPI = loadFileFromGitHub("src/modules/KeyAPI")
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local WindUiSettings = {
@@ -29,8 +30,9 @@ WindUI:SetTheme(WindUiSettings.SelectedTheme)
 
 
 local Fractxlware_M = {}
+local Elements = {}
 
-function Fractxlware_M.ConstructMain()
+function Fractxlware_M.ConstructMain(License)
     local MainWindow = WindUI:CreateWindow({
         Title = "Fractxlware",
         Icon = "rbxassetid://129260712070622",
