@@ -1,5 +1,7 @@
 {
     "robloxLsp.diagnostics.globals": [
-        "writefile"
+        "writefile", // Executor Globals
+        "isfile", // Executor Globals
+        "readfile" // Executor Globals
     ]
 }
