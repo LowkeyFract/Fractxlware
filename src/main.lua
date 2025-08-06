@@ -1,3 +1,7 @@
+local name = "Fractxlware";
+local ownerid = "iU2PO9ridX"; 
+local version = "1.0";
+
 local HttpService = game:GetService("HttpService")
 
 local function loadFileFromGitHub(path)
@@ -15,6 +19,27 @@ end
 
 local Themes = loadFileFromGitHub("src/config/themes")
 local KeyAPI = loadFileFromGitHub("src/modules/KeyAPI")
+
+local Initialized = false
+local sessionid = ""
+
+local data = KeyAPI.Init(name, ownerid, version)
+
+if not data then
+    print("[KeyAuthError]: Initialization failed or invalid response")
+    return false
+end
+
+if data.success == true then
+    Initialized = true
+    sessionid = data.sessionid
+elseif data.message == "invalider" then
+    print("[KeyAuthError]: Wrong Application Version")
+    return false
+else
+    print("[KeyAuthError]: " .. data.message)
+    return false
+end
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local WindUiSettings = {
@@ -51,10 +76,13 @@ function Fractxlware_M.ConstructMain(License)
         Anonymous = true,
     })
 
-    Elements.SettingsTab = MainWindow:Tab({
+    Elements.StatsTab = MainWindow:Tab({
         
     })
 
+    Elements.SettingsTab = MainWindow:Tab({
+        
+    })
 end
 
 return Fractxlware_M
