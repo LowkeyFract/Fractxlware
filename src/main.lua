@@ -12,10 +12,12 @@ local function loadFileFromGitHub(path)
     if success then
         return result
     else
-        warn("Failed to load module:", path, result)
+        warn("Failed to load module from:", url)
+        warn("Error:", result)
         return nil
     end
 end
+
 
 local Themes = loadFileFromGitHub("src/config/themes")
 local KeyAPI = loadFileFromGitHub("src/modules/KeyAPI")
@@ -40,8 +42,8 @@ else
     print("[KeyAuthError]: " .. data.message)
     return false
 end
-
-KeyAPI.FetchStats(name, ownerid, sessionid)
+local stats = KeyAPI.FetchStats(name, ownerid, sessionid)
+local statsdata = stats or {}
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local WindUiSettings = {
@@ -77,16 +79,37 @@ function Fractxlware_M.ConstructMain(License)
     })
 
 
+
+    Elements.ScriptHub = MainWindow:Tab({
+        Title = "Script Hub",
+        Icon = "github"
+    })
+
+    Elements.Da_Hood_Lock = Elements.ScriptHub:Button({
+        Title = "Best Dahood Menu",
+        Callback = function ()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/yuvic123/SKIDO-V3/refs/heads/main/%40Siom4i_"))()
+        end
+    })
+
     Elements.StatsTab = MainWindow:Tab({
         Title = "Stats",
         Icon = "server",
     })
 
-    Elements.StatssActiveUsers = Elements.StatsTab:Paragraph({
-        Title = "Active Users: "..  data.appinfo.numOnlineUsers
+    Elements.FractxlwareStats = Elements.StatsTab:Section({
+        Title = "Realtime Fractxlware Information",
+        TextXAlignment = "Center"
     })
 
+    Elements.StatssActiveUsers = Elements.StatsTab:Paragraph({
+        Title = string.format("Active Users: %s", stats.appinfo and stats.appinfo.numOnlineUsers or "0")
+    })
 
+    Elements.StatsUsers = Elements.StatsTab:Paragraph({
+        Title = string.format("Users: %s", stats.appinfo and stats.appinfo.numUsers or "0")
+    })
+    
     Elements.SettingsTab = MainWindow:Tab({
         Title = "Settings",
         Icon = "settings",
@@ -102,7 +125,5 @@ function Fractxlware_M.ConstructMain(License)
         end
     })
 end
-
- -- Fractxlware_M.ConstructMain()
 
 return Fractxlware_M
