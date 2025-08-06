@@ -89,7 +89,7 @@ local function LicenseWindow_F()
         Title = "Fractxlware Public",
         Icon = "rbxassetid://129260712070622",
         IconThemed = true,
-        Author = "v0.03",
+        Author = "v0.001",
         Folder = "Fractxlware",
         Size = UDim2.fromOffset(580, 460),
         Transparent = true,
@@ -101,12 +101,12 @@ local function LicenseWindow_F()
         },
         SideBarWidth = 200,
         ScrollBarEnabled = true,
+    })
 
         Elements.LicenseWindow:DisableTopbarButtons({
             "Minimize",
             "Fullscreen",
         })
-    })
 
     Elements.License = LicenseWindow:Tab({
         Title = "License",
