@@ -161,11 +161,10 @@ local function LicenseWindow_F()
                 WindUI:Notify({
                     Title = "KeyAuth",
                     Icon = "info",
-                    Content = licensedata.message .. " Creating Window.."
+                    Content = licensedata.message .. " Loading hub.."
                 })
-            LicenseWindow:Close():Destroy()
+            LicenseWindow:Close():Destroy(MainWindow_F)
             writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
-            MainWindow_F()
             end
         end
     })
