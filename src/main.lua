@@ -100,11 +100,6 @@ local function MainWindow_F()
         SideBarWidth = 200,
         ScrollBarEnabled = true,
     })
-
-    MainWindow:DisableTopbarButtons({
-        "Minimize",
-        "Fullscreen",
-    })
 end
 
 local function LicenseWindow_F()
@@ -114,7 +109,7 @@ local function LicenseWindow_F()
         Title = "Fractxlware Public",
         Icon = "rbxassetid://129260712070622",
         IconThemed = true,
-        Author = "v0.011",
+        Author = "v0.012",
         Folder = "Fractxlware",
         Size = UDim2.fromOffset(580, 460),
         Transparent = true,
@@ -163,7 +158,7 @@ local function LicenseWindow_F()
                     Icon = "info",
                     Content = licensedata.message .. " Loading hub.."
                 })
-            LicenseWindow:Close():Destroy(MainWindow_F())
+            LicenseWindow:Close():Destroy(task.wait(6), MainWindow_F())
             writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
             end
         end
