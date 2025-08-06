@@ -69,7 +69,7 @@ function Fractxlware_M.ConstructMain(License)
         User = {
             Enabled = true,
             Callback = function() print("clicked") end,
-            Anonymous = false
+            Anonymous = true
         },
         SideBarWidth = 200,
         ScrollBarEnabled = true,
