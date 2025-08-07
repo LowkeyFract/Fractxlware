@@ -3,6 +3,7 @@
         "writefile",
         "isfile",
         "readfile",
-        "setclipboard"
+        "setclipboard",
+        "WindUI"
     ]
 }

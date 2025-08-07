@@ -27,6 +27,7 @@ print(game.name)
 
 local Themes = loadFileFromGitHub("src/config/themes")
 local KeyAPI = loadFileFromGitHub("src/modules/KeyAPI")
+local scripthub = loadFileFromGitHub("src/config/scripthub")
 
 local Initialized = false
 local sessionid = ""
@@ -84,6 +85,15 @@ function Fractxlware_M.ConstructMain(License)
         ScrollBarEnabled = true,
         Anonymous = true,
     })
+
+    Elements.ScriptHubTab = MainWindow:Tab({
+        Title = "Script Hub",
+        Icon = "github",
+    })
+
+    if scripthub then
+    scripthub(Elements.ScriptHubTab)
+    end
     
     Elements.SettingsTab = MainWindow:Tab({
         Title = "Settings",
