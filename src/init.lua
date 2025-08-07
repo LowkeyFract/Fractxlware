@@ -47,7 +47,6 @@ else
 end
 
 LoadingScreen:ShowAsync()
-SoundModule.Play(82845990304289, 1, SoundService)
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local WindUiSettings = {
@@ -65,7 +64,8 @@ local Elements = {}
 
 local function LicenseWindow_F()
     local License = ""
-
+    
+    SoundModule.Play(82845990304289, 1, SoundService)
     local LicenseWindow = WindUI:CreateWindow({
         Title = "Fractxlware Public",
         Icon = "rbxassetid://129260712070622",
