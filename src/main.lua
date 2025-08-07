@@ -83,6 +83,11 @@ function Fractxlware_M.ConstructMain(License)
         Anonymous = true,
     })
 
+    MainWindow:DisableTopbarButtons({
+    "Minimize",
+    "Fullscreen",
+    })
+
     Elements.ScriptHubTab = MainWindow:Tab({
         Title = "Script Hub",
         Icon = "github",
