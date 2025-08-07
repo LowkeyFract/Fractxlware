@@ -113,7 +113,7 @@ function Fractxlware_M.ConstructMain(License)
                     WindUI:Notify({
                         Title = "Error",
                         Icon = "bug",
-                        Content = "No script available for this template."
+                        Content = "No script available, please contact the developer."
                     })
                 end
             end
@@ -136,6 +136,8 @@ function Fractxlware_M.ConstructMain(License)
     })
     end
 end
+
+
 
 --Fractxlware_M.ConstructMain()
 
