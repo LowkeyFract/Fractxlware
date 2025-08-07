@@ -137,8 +137,6 @@ function Fractxlware_M.ConstructMain(License)
     end
 end
 
-
-
 --Fractxlware_M.ConstructMain()
 
 return Fractxlware_M
