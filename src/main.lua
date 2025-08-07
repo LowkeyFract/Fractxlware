@@ -4,6 +4,7 @@ local version = "1.0";
 
 local MarketPlaceService = game:GetService("MarketplaceService")
 local HttpService = game:GetService("HttpService")
+local TextChatService = game:GetService("TextChatService")
 
 local placeInfo = MarketPlaceService:GetProductInfo(game.PlaceId)
 local universeName = placeInfo.Name
@@ -100,12 +101,31 @@ function Fractxlware_M.ConstructMain(License)
 
     Elements.ChatTabInput = Elements.ChatTab:Input({
         Title = "Bypass Input",
-        Desc = "Input your bypass message here",
+        Desc = "Input your message here to bypass the Roblox chat filter.",
         Placeholder = "Type your message...",
-        Value = "Default value",
+        Value = "",
         Type = "Input",
         Callback = function(input)
-            -- todo
+            local textChatService = game:GetService("TextChatService")
+            local textChannels = textChatService:WaitForChild("TextChannels")
+            local generalChannel = textChannels:FindFirstChild("RBXGeneral") or textChannels:FindFirstChild("General") or textChannels:GetChildren()[1]
+
+            if not generalChannel then
+                warn("No valid TextChannel found")
+                return
+            end
+
+            local function bypassMessage(msg)
+                msg = msg:gsub("a", "а")
+                msg = msg:gsub("e", "е")
+                msg = msg:gsub("i", "і")
+                msg = msg:gsub("o", "о")
+                msg = msg:gsub("u", "υ")
+                return msg
+            end
+
+            local filtered = bypassMessage(input)
+            generalChannel:SendAsync(filtered)
         end
     })
 
