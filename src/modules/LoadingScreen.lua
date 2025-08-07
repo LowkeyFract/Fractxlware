@@ -49,10 +49,17 @@ function Fractxlware:ShowAsync()
         label.Parent = frame
 
         local gradient = Instance.new("UIGradient")
-        gradient.Color = ColorSequence.new({
-            ColorSequenceKeypoint.new(0, Color3.fromRGB(100, 170, 255)),
-            ColorSequenceKeypoint.new(1, Color3.fromRGB(50, 100, 160))
-        })
+        if i >= 8 then
+            gradient.Color = ColorSequence.new({
+                ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 80, 80)),
+                ColorSequenceKeypoint.new(1, Color3.fromRGB(180, 0, 0))
+            })
+        else
+            gradient.Color = ColorSequence.new({
+                ColorSequenceKeypoint.new(0, Color3.fromRGB(100, 170, 255)),
+                ColorSequenceKeypoint.new(1, Color3.fromRGB(50, 100, 160))
+            })
+        end
         gradient.Rotation = 90
         gradient.Parent = label
 
