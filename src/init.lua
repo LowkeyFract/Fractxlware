@@ -3,6 +3,7 @@ local ownerid = "iU2PO9ridX";
 local version = "1.0";
 
 local HttpService = game:GetService("HttpService")
+local SoundService = game:GetService("SoundService")
 
 local function loadFileFromGitHub(path)
     local url = ("https://raw.githubusercontent.com/LowkeyFract/Fractxlware/main/%s.lua"):format(path)
@@ -22,6 +23,7 @@ local KeyAPI = loadFileFromGitHub("src/modules/KeyAPI")
 local LoadingScreen = loadFileFromGitHub("src/modules/LoadingScreen")
 local Fractxlware_M = loadFileFromGitHub("src/main")
 local urls = loadFileFromGitHub("src/config/urls")
+local SoundModule = loadFileFromGitHub("src/modules/SoundModule")
 
 local Initialized = false
 local sessionid = ""
@@ -45,6 +47,7 @@ else
 end
 
 LoadingScreen:ShowAsync()
+SoundModule.Play(82845990304289, 1, SoundService)
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local WindUiSettings = {
