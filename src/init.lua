@@ -138,7 +138,7 @@ local function LicenseWindow_F()
         Title = "Get License",
         URL = urls.DiscordUser,
         Callback = function(URL)
-            setclipboard()
+            setclipboard(urls.DiscordUser)
             WindUI:Notify({
                 Title = "Clipboard",
                 Icon = "info",

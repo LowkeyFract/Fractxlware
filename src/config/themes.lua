@@ -10,6 +10,7 @@ local Themes = {
         Button = "#52525b",
         Icon = "#a1a1aa",
     },
+
     Light = {
         Name = "Light",
         Accent = "#ffffff",
@@ -20,7 +21,103 @@ local Themes = {
         Background = "#ffffff",
         Button = "#d4d4d8",
         Icon = "#52525b",
-    }
+    },
+
+    NeonMidnight = {
+        Name = "Neon Midnight",
+        Accent = "#0ff0fc",
+        Dialog = "#121212",
+        Outline = "#0ff0fc",
+        Text = "#e0f7fa",
+        Placeholder = "#5c5c5c",
+        Background = "#0a0a0a",
+        Button = "#202225",
+        Icon = "#18ffff",
+    },
+
+    FrostedGlass = {
+        Name = "Frosted Glass",
+        Accent = "#7fbcff",
+        Dialog = "#f4f7fa",
+        Outline = "#cfd8dc",
+        Text = "#263238",
+        Placeholder = "#90a4ae",
+        Background = "#ffffff",
+        Button = "#e3f2fd",
+        Icon = "#607d8b",
+    },
+
+    GrapeAbyss = {
+        Name = "Grape Abyss",
+        Accent = "#9f7aea",
+        Dialog = "#1a1325",
+        Outline = "#b794f4",
+        Text = "#f0eaff",
+        Placeholder = "#6c5480",
+        Background = "#0e0b16",
+        Button = "#3a2759",
+        Icon = "#c084fc",
+    },
+
+    MatchaMint = {
+        Name = "Matcha Mint",
+        Accent = "#a3d9a5",
+        Dialog = "#f5fef6",
+        Outline = "#9ae6b4",
+        Text = "#1f2e1f",
+        Placeholder = "#739e80",
+        Background = "#e6ffed",
+        Button = "#c6f6d5",
+        Icon = "#2f855a",
+    },
+
+    SolarizedDark = {
+        Name = "Solarized Dark",
+        Accent = "#268bd2",
+        Dialog = "#002b36",
+        Outline = "#586e75",
+        Text = "#fdf6e3",
+        Placeholder = "#657b83",
+        Background = "#073642",
+        Button = "#586e75",
+        Icon = "#839496",
+    },
+
+    Dracula = {
+        Name = "Dracula",
+        Accent = "#bd93f9",
+        Dialog = "#282a36",
+        Outline = "#ff79c6",
+        Text = "#f8f8f2",
+        Placeholder = "#6272a4",
+        Background = "#1e1f29",
+        Button = "#44475a",
+        Icon = "#ffb86c",
+    },
+
+    OceanWave = {
+        Name = "Ocean Wave",
+        Accent = "#00bcd4",
+        Dialog = "#e0f7fa",
+        Outline = "#00acc1",
+        Text = "#004d40",
+        Placeholder = "#4dd0e1",
+        Background = "#b2ebf2",
+        Button = "#4dd0e1",
+        Icon = "#00796b",
+    },
+
+    RoseMilk = {
+        Name = "Rose Milk",
+        Accent = "#ffccd5",
+        Dialog = "#fff0f3",
+        Outline = "#ff9aa2",
+        Text = "#4a1c40",
+        Placeholder = "#cc8b94",
+        Background = "#fff5f7",
+        Button = "#ffc6c7",
+        Icon = "#ff8ba7",
+    },
 }
 
 return Themes
