@@ -99,15 +99,14 @@ function Fractxlware_M.ConstructMain(License)
     })
 
     Elements.ChatTabInput = Elements.ChatTab:Input({
-        Title = "Chat Input",
-        Desc = "Type a message here to bypass chat restrictions.",
+        Title = "Bypass Input",
+        Desc = "Input your bypass message here",
+        Placeholder = "Type your message...",
+        Value = "Default value",
         Type = "Input",
-        Placeholder = "Enter your message...",
-        Callback = function(message)
-            if message and message ~= "" then
-                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:Fire(message, "All")
-            end
-        end,
+        Callback = function(input)
+            -- todo
+        end
     })
 
     Elements.PlayerTab = MainWindow:Tab({
