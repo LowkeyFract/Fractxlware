@@ -24,7 +24,7 @@ local Themes = {
     },
 
     NeonMidnight = {
-        Name = "Neon Midnight",
+        Name = "NeonMidnight",
         Accent = "#0ff0fc",
         Dialog = "#121212",
         Outline = "#0ff0fc",
@@ -36,7 +36,7 @@ local Themes = {
     },
 
     FrostedGlass = {
-        Name = "Frosted Glass",
+        Name = "FrostedGlass",
         Accent = "#7fbcff",
         Dialog = "#f4f7fa",
         Outline = "#cfd8dc",
@@ -48,7 +48,7 @@ local Themes = {
     },
 
     GrapeAbyss = {
-        Name = "Grape Abyss",
+        Name = "GrapeAbyss",
         Accent = "#9f7aea",
         Dialog = "#1a1325",
         Outline = "#b794f4",
@@ -60,7 +60,7 @@ local Themes = {
     },
 
     MatchaMint = {
-        Name = "Matcha Mint",
+        Name = "MatchaMint",
         Accent = "#a3d9a5",
         Dialog = "#f5fef6",
         Outline = "#9ae6b4",
@@ -72,7 +72,7 @@ local Themes = {
     },
 
     SolarizedDark = {
-        Name = "Solarized Dark",
+        Name = "SolarizedDark",
         Accent = "#268bd2",
         Dialog = "#002b36",
         Outline = "#586e75",
@@ -96,7 +96,7 @@ local Themes = {
     },
 
     OceanWave = {
-        Name = "Ocean Wave",
+        Name = "OceanWave",
         Accent = "#00bcd4",
         Dialog = "#e0f7fa",
         Outline = "#00acc1",
@@ -108,7 +108,7 @@ local Themes = {
     },
 
     RoseMilk = {
-        Name = "Rose Milk",
+        Name = "RoseMilk",
         Accent = "#ffccd5",
         Dialog = "#fff0f3",
         Outline = "#ff9aa2",
