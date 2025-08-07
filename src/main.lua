@@ -89,7 +89,7 @@ function Fractxlware_M.ConstructMain(License)
     })
 
     Elements.ChatTab = MainWindow:Tab({
-        Title = "Chat",
+        Title = "Chat Bypasser",
         Icon = "message-circle-warning",
     })
 
