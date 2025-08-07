@@ -22,9 +22,6 @@ local function loadFileFromGitHub(path)
     end
 end
 
-print(game.name)
-
-
 local Themes = loadFileFromGitHub("src/config/themes")
 local KeyAPI = loadFileFromGitHub("src/modules/KeyAPI")
 local scripthub = loadFileFromGitHub("src/config/scripthub")
@@ -71,7 +68,7 @@ function Fractxlware_M.ConstructMain(License)
         Title = "Fractxlware",
         Icon = "rbxassetid://129260712070622",
         IconThemed = true,
-        Author = "Made by LowkeyFract".." "..universeName,
+        Author = universeName,
         Folder = "Fractxlware",
         Size = UDim2.fromOffset(580, 460),
         Transparent = true,
@@ -92,7 +89,7 @@ function Fractxlware_M.ConstructMain(License)
     })
 
     if scripthub then
-    scripthub(Elements.ScriptHubTab)
+        scripthub(Elements.ScriptHubTab, WindUI)
     end
     
     Elements.SettingsTab = MainWindow:Tab({
@@ -111,5 +108,7 @@ function Fractxlware_M.ConstructMain(License)
     })
     end
 end
+
+--Fractxlware_M.ConstructMain()
 
 return Fractxlware_M

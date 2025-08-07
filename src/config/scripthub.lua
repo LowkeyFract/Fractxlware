@@ -13,7 +13,7 @@ local scripthub = {
     },
 }
 
-return function(tab)
+return function(tab, WindUI)
     for key, template in pairs(scripthub) do
         tab:Button({
             Title = template.Name,
