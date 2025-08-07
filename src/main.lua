@@ -115,56 +115,7 @@ function Fractxlware_M.ConstructMain(License)
                 return
             end
 
-            local function maxBypass(msg)
-                local replacements = {
-                    ["a"] = {"а", "ɑ", "ᴀ"},
-                    ["b"] = {"Ь", "Ꮟ"},
-                    ["c"] = {"ϲ", "ᴄ"},
-                    ["e"] = {"е", "ҽ", "ɛ"},
-                    ["g"] = {"ɡ", "ɢ"},
-                    ["h"] = {"һ", "н", "ḥ"},
-                    ["i"] = {"і", "ɩ", "ɪ"},
-                    ["l"] = {"ⅼ", "ӏ"},
-                    ["n"] = {"ո", "ռ"},
-                    ["o"] = {"о", "૦", "օ"},
-                    ["s"] = {"ѕ", "ṡ", "ꜱ"},
-                    ["t"] = {"т", "ṭ"},
-                    ["u"] = {"υ", "ᴜ", "ʋ"},
-                    ["y"] = {"у", "ყ"},
-                }
-
-                local zwj = utf8.char(0x200D)
-                local zwnj = utf8.char(0x200C)
-                local zwsp = utf8.char(0x200B)
-
-                local function randomInsert(str)
-                    local result = ""
-                    for i = 1, #str do
-                        local ch = str:sub(i, i)
-                        if replacements[ch:lower()] then
-                            local replList = replacements[ch:lower()]
-                            local randChar = replList[math.random(1, #replList)]
-                            result = result .. randChar
-                        else
-                            result = result .. ch
-                        end
-
-
-                        if math.random() < 0.5 then
-                            local invis = ({zwj, zwnj, zwsp})[math.random(1, 3)]
-                            result = result .. invis
-                        end
-                    end
-                    return result
-                end
-
-                return randomInsert(msg)
-            end
-
-
-            math.randomseed(tick())
-
-            local filtered = maxBypass(input)
+            local filtered = (input)
             generalChannel:SendAsync(filtered)
         end
     })
