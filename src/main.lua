@@ -89,7 +89,7 @@ function Fractxlware_M.ConstructMain(License)
     })
 
     if scripthub then
-        scripthub(Elements.ScriptHubTab, WindUI)
+        scripthub(Elements.ScriptHubTab)
     end
     
     Elements.SettingsTab = MainWindow:Tab({
