@@ -1,7 +1,8 @@
 {
     "robloxLsp.diagnostics.globals": [
-        "writefile", // Executor Globals
-        "isfile", // Executor Globals
-        "readfile" // Executor Globals
+        "writefile",
+        "isfile",
+        "readfile",
+        "setclipboard"
     ]
 }

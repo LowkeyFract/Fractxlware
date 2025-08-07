@@ -21,6 +21,7 @@ local Themes = loadFileFromGitHub("src/config/themes")
 local KeyAPI = loadFileFromGitHub("src/modules/KeyAPI")
 local LoadingScreen = loadFileFromGitHub("src/modules/LoadingScreen")
 local Fractxlware_M = loadFileFromGitHub("src/main")
+local urls = loadFileFromGitHub("src/config/urls")
 
 local Initialized = false
 local sessionid = ""
@@ -42,7 +43,6 @@ else
     print("[KeyAuthError]: " .. data.message)
     return false
 end
-
 
 LoadingScreen:ShowAsync()
 
@@ -120,6 +120,19 @@ local function LicenseWindow_F()
             writefile(LicenseWindow.Folder .. "/" .. "license" .. ".key", tostring(License))
             Fractxlware_M.ConstructMain(License)
             end
+        end
+    })
+
+    Elements.GetLicense = Elements.License:Button({
+        Title = "Get License",
+        URL = urls.DiscordUser,
+        Callback = function(URL)
+            setclipboard()
+            WindUI:Notify({
+                Title = "Clipboard",
+                Icon = "info",
+                Content = "You have successfully copied the link!"
+            })
         end
     })
 end

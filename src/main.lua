@@ -2,7 +2,11 @@ local name = "Fractxlware";
 local ownerid = "iU2PO9ridX"; 
 local version = "1.0";
 
+local MarketPlaceService = game:GetService("MarketplaceService")
 local HttpService = game:GetService("HttpService")
+
+local placeInfo = MarketPlaceService:GetProductInfo(game.PlaceId)
+local universeName = placeInfo.Name
 
 local function loadFileFromGitHub(path)
     local url = ("https://raw.githubusercontent.com/LowkeyFract/Fractxlware/main/%s.lua"):format(path)
@@ -17,6 +21,8 @@ local function loadFileFromGitHub(path)
         return nil
     end
 end
+
+print(game.name)
 
 
 local Themes = loadFileFromGitHub("src/config/themes")
@@ -59,11 +65,12 @@ local Fractxlware_M = {}
 local Elements = {}
 
 function Fractxlware_M.ConstructMain(License)
+    if Initialized then
     local MainWindow = WindUI:CreateWindow({
         Title = "Fractxlware",
         Icon = "rbxassetid://129260712070622",
         IconThemed = true,
-        Author = "Made by LowkeyFract",
+        Author = "Made by LowkeyFract".." "..universeName,
         Folder = "Fractxlware",
         Size = UDim2.fromOffset(580, 460),
         Transparent = true,
@@ -76,38 +83,6 @@ function Fractxlware_M.ConstructMain(License)
         SideBarWidth = 200,
         ScrollBarEnabled = true,
         Anonymous = true,
-    })
-
-
-
-    Elements.ScriptHub = MainWindow:Tab({
-        Title = "Script Hub",
-        Icon = "github"
-    })
-
-    Elements.Da_Hood_Lock = Elements.ScriptHub:Button({
-        Title = "Best Dahood Menu",
-        Callback = function ()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yuvic123/SKIDO-V3/refs/heads/main/%40Siom4i_"))()
-        end
-    })
-
-    Elements.StatsTab = MainWindow:Tab({
-        Title = "Stats",
-        Icon = "server",
-    })
-
-    Elements.FractxlwareStats = Elements.StatsTab:Section({
-        Title = "Realtime Fractxlware Information",
-        TextXAlignment = "Center"
-    })
-
-    Elements.StatssActiveUsers = Elements.StatsTab:Paragraph({
-        Title = string.format("Active Users: %s", stats.appinfo and stats.appinfo.numOnlineUsers or "0")
-    })
-
-    Elements.StatsUsers = Elements.StatsTab:Paragraph({
-        Title = string.format("Users: %s", stats.appinfo and stats.appinfo.numUsers or "0")
     })
     
     Elements.SettingsTab = MainWindow:Tab({
@@ -124,6 +99,7 @@ function Fractxlware_M.ConstructMain(License)
             WindUI:SetTheme(option)
         end
     })
+    end
 end
 
 return Fractxlware_M

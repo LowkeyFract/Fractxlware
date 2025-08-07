@@ -56,7 +56,7 @@ function Fractxlware:ShowAsync()
         gradient.Rotation = 90
         gradient.Parent = label
 
-        local tweenIn = TweenService:Create(label, TweenInfo.new(0.3), {TextTransparency = 0, TextSize = 60})
+        local tweenIn = TweenService:Create(label, TweenInfo.new(0.25), {TextTransparency = 0, TextSize = 60})
         tweenIn:Play()
 
         table.insert(letters, label)
