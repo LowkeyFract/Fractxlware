@@ -88,6 +88,11 @@ function Fractxlware_M.ConstructMain(License)
     "Fullscreen",
     })
 
+    Elements.InformationTab = MainWindow:Tab({
+        Title = "Information",
+        Icon = "info",
+    })
+
     Elements.ChatTab = MainWindow:Tab({
         Title = "Chat Bypasser",
         Icon = "message-circle-warning",
