@@ -104,6 +104,14 @@ local function LicenseWindow_F()
         Title = "Check License",
         Callback = function()
             local licensedata = KeyAPI.LicenseCheck(name, ownerid, version, sessionid, License)
+            if licensedata == nil then
+                WindUI:Notify({
+                    Title = "KeyAuth",
+                    Icon = "info",
+                    Content = "Failed to check license. Please try again or make a ticket in our discord."
+                })
+                return
+            end
             if licensedata.success == false then
                 WindUI:Notify({
                     Title = "KeyAuth",
