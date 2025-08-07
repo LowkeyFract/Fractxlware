@@ -100,7 +100,8 @@ function Fractxlware_M.ConstructMain(License)
 
     Elements.ChatTabInput = Elements.ChatTab:Input({
         Title = "Chat Input",
-        Desc = "Type your message here",
+        Desc = "Type a message here to bypass chat restrictions.",
+        Type = "Input",
         Placeholder = "Enter your message...",
         Callback = function(message)
             if message and message ~= "" then
