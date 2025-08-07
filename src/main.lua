@@ -96,29 +96,30 @@ function Fractxlware_M.ConstructMain(License)
             Callback = function()
                 if template.loadstring and template.loadstring ~= "" then
                     local success, err = pcall(loadstring(template.loadstring))
-                    if not success then
+                    if success then
+                        WindUI:Notify({
+                            Title = "Script Loaded",
+                            Icon = "check",
+                            Content = "Successfully executed " .. template.Name
+                        })
+                    else
                         WindUI:Notify({
                             Title = "Error",
-                            Icon = "error",
+                            Icon = "bug",
                             Content = "Failed to load script: " .. err
                         })
                     end
                 else
                     WindUI:Notify({
                         Title = "Error",
-                        Icon = "error",
+                        Icon = "bug",
                         Content = "No script available for this template."
                     })
                 end
-                WindUI:Notify({
-                    Title = "Script Loaded",
-                    Icon = "check",
-                    Content = "Successfully executed " .. template.Name
-                })
             end
         })
     end
-    
+
     Elements.SettingsTab = MainWindow:Tab({
         Title = "Settings",
         Icon = "settings",
