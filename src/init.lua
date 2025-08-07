@@ -64,7 +64,7 @@ local Elements = {}
 
 local function LicenseWindow_F()
     local License = ""
-    
+
     SoundModule.Play(82845990304289, 1, SoundService)
     local LicenseWindow = WindUI:CreateWindow({
         Title = "Fractxlware Public",
@@ -82,6 +82,11 @@ local function LicenseWindow_F()
         },
         SideBarWidth = 200,
         ScrollBarEnabled = true,
+         WindUI:Notify({
+            Title = "Fractxlware Loaded",
+            Icon = "check",
+            Content = "Join the Discord!"
+        })
     })
 
     Elements.License = LicenseWindow:Tab({
