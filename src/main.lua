@@ -98,6 +98,17 @@ function Fractxlware_M.ConstructMain(License)
         Icon = "message-circle-warning",
     })
 
+    Elements.ChatTabInput = Elements.ChatTab:Input({
+        Title = "Chat Input",
+        Desc = "Type your message here",
+        Placeholder = "Enter your message...",
+        Callback = function(message)
+            if message and message ~= "" then
+                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:Fire(message, "All")
+            end
+        end,
+    })
+
     Elements.PlayerTab = MainWindow:Tab({
         Title = "Player",
         Icon = "user-round-cog",
