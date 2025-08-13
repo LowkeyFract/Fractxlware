@@ -3,8 +3,6 @@ local ownerid = "iU2PO9ridX";
 local version = "1.0";
 
 local MarketPlaceService = game:GetService("MarketplaceService")
-local HttpService = game:GetService("HttpService")
-local TextChatService = game:GetService("TextChatService")
 
 local placeInfo = MarketPlaceService:GetProductInfo(game.PlaceId)
 local universeName = placeInfo.Name
@@ -137,8 +135,10 @@ function Fractxlware_M.ConstructMain(License)
             Icon = template.Icon,
             IconThemed = template.IconThemed,
             Callback = function()
-                if template.loadstring and template.loadstring ~= "" then
-                    local success, err = pcall(loadstring(template.loadstring))
+                if template.ScriptUrl and template.ScriptUrl ~= "" then
+                    local success, err = pcall(function()
+                        loadstring(game:HttpGet(template.ScriptUrl))()
+                    end)
                     if success then
                         WindUI:Notify({
                             Title = "Script Loaded",
@@ -148,15 +148,15 @@ function Fractxlware_M.ConstructMain(License)
                     else
                         WindUI:Notify({
                             Title = "Error",
-                            Icon = "bug",
-                            Content = "Failed to load script: " .. err
+                            Icon = "error",
+                            Content = "Failed to load script: " .. tostring(err)
                         })
                     end
                 else
                     WindUI:Notify({
                         Title = "Error",
-                        Icon = "bug",
-                        Content = "No script available, please contact the developer."
+                        Icon = "error",
+                        Content = "No script available for this template."
                     })
                 end
             end
